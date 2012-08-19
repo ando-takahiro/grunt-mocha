@@ -1,3 +1,5 @@
+var LONG_TIMEOUT = 30 * 1000;
+
 /*
  * grunt
  * https://github.com/cowboy/grunt
@@ -40,7 +42,7 @@ function sendDebugMessage() {
 
 // Abort if Mocha doesn't do anything for a while.
 setInterval(function() {
-  if (new Date() - last > 5000) {
+  if (new Date() - last > LONG_TIMEOUT) {
     sendMessage(['done_timeout']);
   }
 }, 1000);
